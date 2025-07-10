@@ -5,6 +5,7 @@ import { getPersonajes } from './lib/rickyMorty';
 import { useEffect, useState } from 'react';
 import Logo from './components/logo';
 import { ScrollView } from 'react-native-web';
+import { CharacterCard } from './components/CharacterCard';
 
 
 export default function App() {
@@ -25,13 +26,7 @@ export default function App() {
       <Logo style={styles.logo}/>
       <ScrollView>
       { personajes.map((personaje) => (
-        <View style= {styles.card} key={personaje.id}>
-          <Image style= {styles.card} source={{ uri: personaje.image}}></Image>
-          <Text style= {styles.title}>Nombre:{personaje.name}</Text>
-          <Text style= {styles.species}>Especie:{personaje.species}</Text>
-          <Text style= {styles.status}>Estado:{personaje.status}</Text>
-          <Text style= {styles.gender}>Genero:{personaje.gender}</Text>
-        </View>
+        <CharacterCard personaje={personaje}></CharacterCard> 
       ))}
       </ScrollView>
     </View>
