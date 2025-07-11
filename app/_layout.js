@@ -4,11 +4,26 @@ export default function RootLayout() {
     return (
         <Stack>
             <Stack.Screen
-            name="index"
-            options={{
-                  headerShown: false  
-            }}
+                name="index"
+                options={{
+                    headerShown: false
+                }}
             />
+            <Stack.Screen
+                name="about"
+                options={{
+                    title:'Acerca de',
+                    headerStyle:{
+                        backgroundColor:'#333'
+                    },
+                    headerTintColor:'#fff',
+                    headerTitleStyle:{
+                        fontWeight:'bold',
+                    },
+                }}
+            />
+
         </Stack>
     );
+
 }

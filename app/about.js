@@ -1,26 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View} from 'react-native';
-import Logo from '../components/logo';
-import { Main } from '../components/Main';
-import { TouchableOpacity } from 'react-native';
-import { Link } from 'expo-router';
+import { Link } from "expo-router";
+import { ScrollView, View } from "react-native-web";
+import { StyleSheet } from "react-native";
 import { Text } from "react-native-web";
 
-export default function Index() {
+export default function About() {
+    return (
+        <ScrollView>
+            <View>
+                <Text>
+                    Hola Mundo
+                </Text>
+                <Link href="/" style={styles.title}>
+                    <Text>Volver al inicio</Text>
+                </Link>
+            </View>
+        </ScrollView>
+    );
 
-  return (
-    <View style={styles.container}>
-      <StatusBar style="light" />
-      <Logo style={styles.logo}/>
-        <Link href="/about" asChild>
-            <TouchableOpacity style={styles.aboutButton}>
-                <Text style={styles.aboutButtonText}>Acerca de</Text>
-            </TouchableOpacity>
-        </Link>
-      <Main/>
-    </View>
-  );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -66,4 +63,6 @@ const styles = StyleSheet.create({
     color: '#fff',
   }
 });
+
+
 
